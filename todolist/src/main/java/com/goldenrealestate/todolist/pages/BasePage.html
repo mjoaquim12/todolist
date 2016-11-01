@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Golden RE</title>
+
+    <meta name="description" content="Simple application to manage TODO List">
+    <meta name="author" content="Joaquim M">
+    
+    <style>
+      .carousel-inner > .item > img,
+      .carousel-inner > .item > a > img {
+          width     : 65%;
+          margin    : auto;
+          max-height: 300px;
+      }
+    </style>
+
+  </head>
+  <body>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-12">
+          <nav class="navbar navbar-default" role="navigation">
+            <div class="navbar-header">
+
+              <button type="button" class="navbar-toggle"
+                      data-toggle="collapse" data-target="#bs-main-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <wicket:link>
+                <a class="navbar-brand" href="WelcomePage.html">Golden RE</a>
+              </wicket:link>
+            </div>
+
+            <div class="collapse navbar-collapse" id="bs-main-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li>
+                  <wicket:link>
+                    <a href="ProjectPage.html">Projects</a>
+                  </wicket:link>
+                </li>
+                <li>
+                  <wicket:link>
+                    <a href="AgentPage.html">Agents</a>
+                  </wicket:link>
+                </li>
+                <li>
+                  <wicket:link>
+                    <a href="BuildingPage.html">Buildings</a>
+                  </wicket:link>
+                </li>
+              </ul>
+            </div>
+          </nav>
+
+          <div class="container-fluid">
+            <wicket:child />
+          </div>
+        </div>
+      </div>
+    </div>
+	
+  
+  </body>
+  
+   <script type="text/javascript">
+  
+    
+    $(document).ready(function () {
+    
+        (function ($) {
+    
+            $('#filter').keyup(function () {
+    
+                var rex = new RegExp($(this).val(), 'i');
+                $('.searchable tr').hide();
+                $('.searchable tr').filter(function () {
+                    return rex.test($(this).text());
+                }).show();
+    
+            })
+    
+        }(jQuery));
+    
+    });
+  
+  </script>
+</html>

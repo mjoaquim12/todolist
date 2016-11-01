@@ -1,0 +1,112 @@
+<wicket:extend>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        Projects
+      </h3>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-3">
+      <wicket:link>
+        <a href="CreateProject.html" role="button" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus"></span>
+          Create New Project
+        </a>
+      </wicket:link>
+    </div>
+
+    <div class="col-md-7">
+      <form wicket:id="filterForm" class="form-inline" role="search">
+        <div class="form-group">
+          <label class="control-label hidden-xs hidden-sm">Building </label>
+          <select wicket:id="dropDownBuilding" class="form-control" />
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+             <span class="hidden-xs hidden-sm"> Search</span>
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <div class="col-md-2">
+      <a wicket:id="refresh-link" href="#" class="btn btn-primary"
+        role="button">
+        <span class="glyphicon glyphicon-refresh"></span>
+         <span class="hidden-xs hidden-sm"> Refresh</span>
+      </a>
+    </div>
+
+  </div>
+
+  <div style="margin-top:10px">
+  </div>
+
+  <!-- Filter table used code referred from http://jsfiddle.net/giorgitbs/52ak9/1/ -->
+  <div class="well">
+    <div class="input-group"> 
+      <span class="input-group-addon">Filter</span>
+      <input id="filter" type="text" class="form-control" placeholder="Type here to filter on this page">
+    </div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Building</th>
+          <th class="hidden-xs">Project</th>
+          <th>Agent</th>
+          <th>Status</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody class="searchable">
+        <tr wicket:id="projects">
+          <td>
+            <span wicket:id="buildingName">
+              Burj Khalifa
+            </span>
+          </td>
+          <td class="hidden-xs">
+            <span wicket:id="project">
+              Burj Khalifa
+            </span>
+          </td>
+          <td>
+            <span wicket:id="assigned">
+              Burj Khalifa
+            </span>
+          </td>
+          <td>
+            <span wicket:id="status">
+              Burj Khalifa
+            </span>
+          </td>
+          <td>
+            <a wicket:id="edit" href="EditProject.html">
+              <span class="glyphicon glyphicon-edit"></span>
+              <span class="hidden-xs"> Edit </span>
+            </a>
+          </td>
+          <td>
+            <a wicket:id="delete-link" href="#">
+              <span class="glyphicon glyphicon-remove"></span>
+              <span class="hidden-xs"> Delete </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    <div style="margin-top: 1em">
+      <ul id="pager" wicket:id="pager" class="navigation"></ul>
+    </div>
+
+  </div>
+ 
+
+</wicket:extend>

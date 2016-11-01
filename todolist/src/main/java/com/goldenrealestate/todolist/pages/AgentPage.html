@@ -1,0 +1,71 @@
+<wicket:extend>
+
+  <div class="row">
+    <div class="col-md-12">
+      <h3>
+        Agents
+      </h3>
+    </div>
+  </div>
+
+  <div class="row">
+
+    <div class="col-md-8">
+      <wicket:link>
+      <a href="CreateAgent.html" role="button" class="btn btn-primary">
+        <span class="glyphicon glyphicon-plus"></span>
+        Create Agent
+      </a>
+    </wicket:link>
+    </div>
+
+    <div class="col-md-4">
+     
+        <form wicket:id="filterForm"  class="form-inline" role="search">
+        <div class="form-group">
+          <input wicket:id="searchString" type="text" class="form-control" placeholder="Find an agent">
+         </div>
+            <button type="submit" class="btn btn-primary">
+            <span class="glyphicon glyphicon-search"></span>
+              Search
+            </button>
+        </form>
+      
+    </div>
+
+  </div>
+
+
+  <div  style="margin-top:10px"></div>
+
+  <div class="well col-md-12">
+    <table class="table table-hover control-group">
+
+      <thead>
+        <tr>
+          <th>Agent Name</th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <tr wicket:id = "agents">
+          <td>            
+            <span wicket:id = "name">
+            </span>
+          </td>
+          <td>
+			<a wicket:id = "edit" href="EditAgent.html"><span class="glyphicon glyphicon-edit"></span> Edit</a>
+		  </td>
+          <td>
+           <a wicket:id="delete-link"  href="#"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+          </td>
+        </tr>
+      </tbody>
+
+    </table>
+    
+  </div> 
+
+</wicket:extend>

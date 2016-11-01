@@ -1,0 +1,41 @@
+<wicket:extend>
+ 
+   <h3 align="left">Create New Agent</h3>
+     <div class="container">
+     <form class="form-horizontal" wicket:id="createAgentForm" role="form">       
+        
+       <div class="form-group">
+            <label wicket:for="name">Agent name</label>
+
+            <div class="controls">
+                <input wicket:id="name" type="text" class="form-control" placeholder="Type agent name">
+            </div>
+        </div>
+      
+      <div class="form-group">
+        <div class="controls">
+          <button wicket:id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>
+    
+   <!--   <form class="form-horizontal" wicket:id="createAgentForm" >
+
+      <div class="form-group">
+        <label class="control-label col-sm-2">Agent Name</label>
+        <div class="col-sm-10">
+          <input wicket:id="name" type="text" class="form-control">
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+          <button wicket:id="submitBtn" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+      </div>
+    </form>-->
+  </div>
+  
+ 
+
+</wicket:extend>
